@@ -3,10 +3,7 @@
 
 <?php>
 
-	// måste kopplas till databas
-
-	include ...
-
+	include "dbConnection.php";
 
 	$query = "SELECT Datum, StartTid, MassorID, Behandlingstyp FROM BokningsbarTid, Behandling WHERE BokningsbarTid.BehandlingsID=Behandling.BehandlingsID AND BestallarID IS NULL";
 	$result = 
@@ -20,12 +17,12 @@
 	</head>
 	<body>
 		<div id = "tider">
-			<h1>Tillgängliga tider:<h1>
+			<h1>TillgÃ¤ngliga tider:<h1>
 			<?php>
 
 				while($row = $result->fetch_assoc())
 				{
-					echo 	$row["Datum"] $row["StartTid"], $row["Behandlingstyp"], $row["MassörID"];
+					echo 	$row["Datum"] $row["StartTid"], $row["Behandlingstyp"], $row["MassÃ¶rID"];
 					echo "<br/>";
 				}
 			
