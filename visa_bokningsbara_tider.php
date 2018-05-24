@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 
-
 <?php>
-
-	include "dbConnection.php";
-
+	include "include/moduls/dbConnection.php";
 	$query = "SELECT Datum, StartTid, Namn FROM BokningsbarTid, Massor WHERE BokningsbarTid.MassorID=Massor.MassorID AND BestallarID IS NULL";
-	$result = 
-
-</php>
-
+	$result = $conn->query($query);
+?>
 
 <html>
 	<head>
@@ -17,20 +12,14 @@
 	</head>
 	<body>
 		<div id = "tider">
-			<h1>Tillgängliga tider:<h1>
+			<h1><b>Tillgängliga tider:</b><h1>
 			<?php>
-
 				while($row = $result->fetch_assoc())
 				{
-					echo 	$row["Datum"] $row["StartTid"], $row["Namn"];
+					echo $row["Namn"], " ", $row["Datum"], " ", $row["StartTid"];
 					echo "<br/>";
 				}
-			
-			</php>
+			?>
 		</div>
-		
 	</body>
-
-
-
-</html
+</html>
