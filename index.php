@@ -8,6 +8,7 @@
 	<body>
 			<?php include 'include/views/_header.php';?>
 			<?php include 'include/moduls/_datepicker.php';?>
+			<?php include 'include/moduls/_timepicker.php';?>
 			<?php include 'include/views/_footer.php';?>
 	</body>
 </html>
