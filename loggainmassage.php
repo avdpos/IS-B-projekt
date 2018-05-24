@@ -1,17 +1,27 @@
-<!DOCTYPE html>
+<?php
+
+
+ ?>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Logga in</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="assets/css/_header.css">
+
+
 	</head>
 
 	<body>
-		<ul>
+		<br>
+			<div>
+					<?php include 'include/views/_header.php' ?>
+			</div>
+		</body>
 
-
+<br>
+	  <h3>Här loggar beställare in</h3>
 		<div id="formular">
-			<p> Logga in! </p>
-
 				<label class="rubrik" for="mail">E-mail</label>
 				<input type="email" id="mail" name="mail" placeholder="E-mail">
 

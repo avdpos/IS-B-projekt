@@ -10,12 +10,12 @@
 
 <body>
   <br>
+	  <h3>Här registrerar beställare ny profil</h3>
     <div>
         <?php include 'include/views/_header.php' ?>
         </div type="regForm">
-        <br>
-        	 <h3>Här registreras massörer</h3>
-            <form method="post" onsubmit="return validateRegistration()" action="massorinlog.php">
+          <br>
+            <form method="post" onsubmit="return validateRegistration()" action="validateBestallarReg.php">
                 <table class="form">
                     <tr>
                         <th><label for="Namn">Namn</label></th>
@@ -25,9 +25,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="Klinik">Klinik</label></th>
+                        <th><label for="personnummer">Personnummer</label></th>
                         <td>
-                            <input type="text" name="Klinik" id="Klinik" required>
+                            <input type="text" name="personnummer" id="personnummer" required>
 
                         </td>
                     </tr>
