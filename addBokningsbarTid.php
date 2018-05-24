@@ -16,39 +16,26 @@
             <form method="post" action="validateBooking.php">
                 <table class="form">
                     <tr>
-                        <th><label for="Date">Date</label></th>
+                        <th><label for="Date">Datum</label></th>
                         <td>
                             <p>Date: <input type="text" id="datepicker"></p>                          
                         </td>
                     </tr>
                         
                     <tr>
-                        <th><label for="Time">Tid</label></th>
+                        <th><label for="Tid">Tid</label></th>
                         <td> 
                             <?php include 'include/moduls/timepicker.php' ?>
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="Email">Email</label></th>
+                        <th><label for="Behandling">Möjliga behandlingar</label></th>
                         <td>
-                            <input type="text" name="Email" id="Email"  required>
-                            
+                            <?php include 'include/moduls/behandlingscheckbox.php' ?>   
                         </td>
-                    </tr>
-                    <tr>
-                        <th><label for="Password">Password</label></th>
-                        <td>
-                            <input type="password" name="regPassword" id="regPassword" required>
-                        </td>
-                    <tr >
-                        <th><label for="Password_Confirmation">Confirm Password</label></th>
-                        <td>
-                            <input type="password" name="regPassword2" id="regPassword2" required><br>
-                           
-                        </td>
-                    </tr>
+                    </tr>                   
                 </table>
-                <input type="submit" class="button" name="Submit" value="registrate user">
+                <input type="submit" class="button" name="Submit" value="registrera tid">
             </form>
         <div>
         <?php include 'include/views/_footer.php'?> 
