@@ -5,7 +5,7 @@
 
 	include "dbConnection.php";
 
-	$query = "SELECT Datum, StartTid, MassorID, Behandlingstyp FROM BokningsbarTid, Behandling WHERE BokningsbarTid.BehandlingsID=Behandling.BehandlingsID AND BestallarID IS NULL";
+	$query = "SELECT Datum, StartTid, Namn FROM BokningsbarTid, Massor WHERE BokningsbarTid.MassorID=Massor.MassorID AND BestallarID IS NULL";
 	$result = 
 
 </php>
@@ -22,7 +22,7 @@
 
 				while($row = $result->fetch_assoc())
 				{
-					echo 	$row["Datum"] $row["StartTid"], $row["Behandlingstyp"], $row["MassörID"];
+					echo 	$row["Datum"] $row["StartTid"], $row["Namn"];
 					echo "<br/>";
 				}
 			
