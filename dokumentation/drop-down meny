@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Tillängliga tider</h2>
+
+<form action="/action_page.php">
+  <select name="cars">
+    <option value="">15:10</option>
+    <option value="">16:10</option>
+    <option value="">17:10</option>
+    <option value="">18:10</option>
+  </select>
+  <br><br>
+  <input type="submit" value="boka tid">
+</form>
+
+</body>
+</html>
