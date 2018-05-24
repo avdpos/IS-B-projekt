@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>MassageTid</title>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/_header.css">
+    <title>Massagetid</title>
+</head>
+
 	<body>
-			<?php include 'include/views/_header.php';?>
-			<?php include 'include/moduls/_datepicker.php';?>
-			<?php include 'include/moduls/_timepicker.php';?>
-			<?php include 'include/views/_footer.php';?>
+
+
+		<div>
+				<?php include 'include/views/_header.php' ?>
+				</div>
 	</body>
+
+
+
 </html>
 
