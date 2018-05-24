@@ -9,10 +9,10 @@
 		
 	</head>
 	<body>
-		<?php>
- 			include 'include/views/_header.php'
-			include 'include/modules/_datepicker.php'
-			include 'include/views/_footer.php'
+		<?php
+ 			include 'include/views/_header.php';
+			include 'include/moduls/_datepicker.php';
+			include 'include/views/_footer.php';
 		?>
 		
 	</body>
