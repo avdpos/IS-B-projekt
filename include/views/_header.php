@@ -12,6 +12,7 @@
         <li><a href="loggainmassage.html">Logga in beställare</a></li>
         <li><a href="loggainmassor.hmtl">Logga in massör</a></li>
         <li><a href="massorreg.php">REgistrera massör</a></li>
+        <li><a href="validateBestallarReg.php">reg bestallare</a></li>
         <li><a href="addBokningsbarTid.php">Lägg till bokningsbar tid</a></li>
 
         

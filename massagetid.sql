@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1:3306
--- Tid vid skapande: 18 maj 2018 kl 09:41
+-- Tid vid skapande: 24 maj 2018 kl 15:16
 -- Serverversion: 5.7.21
 -- PHP-version: 5.6.35
 
@@ -86,6 +86,21 @@ CREATE TABLE IF NOT EXISTS `bokningsbartid` (
   `BestallarId` int(11) DEFAULT NULL,
   `BestallarAdress` int(11) DEFAULT NULL,
   PRIMARY KEY (`TidId`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `bokningsekraftelse`
+--
+
+DROP TABLE IF EXISTS `bokningsekraftelse`;
+CREATE TABLE IF NOT EXISTS `bokningsekraftelse` (
+  `BekraftelseId` int(11) NOT NULL AUTO_INCREMENT,
+  `MassagetidId` int(11) NOT NULL,
+  `EmailBekraftelse1` timestamp NOT NULL,
+  `EmailBekraftelse2` timestamp NOT NULL,
+  PRIMARY KEY (`BekraftelseId`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

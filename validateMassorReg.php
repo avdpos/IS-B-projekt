@@ -143,7 +143,7 @@ if (sizeof($errors) == 0)
         <div>
         <?php include 'include/views/_footer.php'?> 
     </div>
-    <script src="assets/js/registration.js"></script>        
+          
 </body>
 
 </html>
