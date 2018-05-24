@@ -56,7 +56,7 @@
             </form>
         <div>
     </div>
-    <script src="assets/js/bestallarRegistration.js"></script>
+    
 </body>
 
 </html>

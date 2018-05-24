@@ -47,13 +47,15 @@ if (sizeof($errors) == 0)
 
         //insert i sql
         
-        $sql        ="INSERT INTO bestallare(Username, KlinikNamn, Email, Password, Salt)
+        $sql        ="INSERT INTO massor(Username, KlinikNamn, Email, Password, Salt)
                         VALUES('$userName', '$kliniknamn', '$email', '$password', '$salt')";
 
         if ($conn->query($sql) === TRUE) {
             echo "New user created successfully";
             header("Location: index.php");
             mysqli_close($conn);
+
+            $sql    ="SELECT massor"
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
             mysqli_close($conn);
