@@ -2,7 +2,7 @@
 
 <?php>
 	include "include/moduls/dbConnection.php";
-	$query = "SELECT Datum, StartTid, Namn FROM BokningsbarTid, Massor WHERE BokningsbarTid.MassorID=Massor.MassorID AND BestallarID IS NULL";
+	$query = "SELECT Datum, StartTid, Klinik FROM BokningsbarTid, Massor WHERE BokningsbarTid.MassorID=Massor.MassorID AND BestallarID IS NULL";
 	$result = $conn->query($query);
 ?>
 
