@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1:3306
--- Tid vid skapande: 24 maj 2018 kl 15:16
+-- Tid vid skapande: 25 maj 2018 kl 11:36
 -- Serverversion: 5.7.21
 -- PHP-version: 5.6.35
 
@@ -21,6 +21,32 @@ SET time_zone = "+00:00";
 --
 -- Databas: `massagetid`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `behandling`
+--
+
+DROP TABLE IF EXISTS `behandling`;
+CREATE TABLE IF NOT EXISTS `behandling` (
+  `BehandlingsId` int(11) NOT NULL AUTO_INCREMENT,
+  `Behandlingstyp` varchar(40) NOT NULL,
+  `Tidslangd` int(11) NOT NULL DEFAULT '45',
+  `Pris` int(11) NOT NULL,
+  PRIMARY KEY (`BehandlingsId`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `behandling`
+--
+
+INSERT INTO `behandling` (`BehandlingsId`, `Behandlingstyp`, `Tidslangd`, `Pris`) VALUES
+(1, 'klassisk_massage', 45, 800),
+(2, 'thai_massage', 45, 600),
+(3, 'fot_massage', 45, 700),
+(4, 'idrott_massage', 45, 1000),
+(5, 'huvud_massage', 45, 650);
 
 -- --------------------------------------------------------
 
@@ -73,24 +99,6 @@ CREATE TABLE IF NOT EXISTS `betalningsuppgifter` (
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `bokningsbartid`
---
-
-DROP TABLE IF EXISTS `bokningsbartid`;
-CREATE TABLE IF NOT EXISTS `bokningsbartid` (
-  `TidId` int(11) NOT NULL AUTO_INCREMENT,
-  `MassorId` int(11) NOT NULL,
-  `Datum` date NOT NULL,
-  `StartTid` time NOT NULL,
-  `BehandlingsId` int(11) NOT NULL,
-  `BestallarId` int(11) DEFAULT NULL,
-  `BestallarAdress` int(11) DEFAULT NULL,
-  PRIMARY KEY (`TidId`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Tabellstruktur `bokningsekraftelse`
 --
 
@@ -114,6 +122,24 @@ CREATE TABLE IF NOT EXISTS `certifikat` (
   `CertifikatsId` int(11) NOT NULL AUTO_INCREMENT,
   `SvenskMassage` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`CertifikatsId`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `massagetid`
+--
+
+DROP TABLE IF EXISTS `massagetid`;
+CREATE TABLE IF NOT EXISTS `massagetid` (
+  `TidId` int(11) NOT NULL AUTO_INCREMENT,
+  `MassorId` int(11) NOT NULL,
+  `Datum` date NOT NULL,
+  `StartTid` time NOT NULL,
+  `BehandlingsId` int(11) NOT NULL,
+  `BestallarId` int(11) DEFAULT NULL,
+  `BestallarAdress` int(11) DEFAULT NULL,
+  PRIMARY KEY (`TidId`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -150,6 +176,30 @@ CREATE TABLE IF NOT EXISTS `massoradress` (
   `MassorId` int(11) NOT NULL,
   PRIMARY KEY (`MassorAdressId`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `mojligabehandlingar`
+--
+
+DROP TABLE IF EXISTS `mojligabehandlingar`;
+CREATE TABLE IF NOT EXISTS `mojligabehandlingar` (
+  `mojligaBehandlingarId` int(11) NOT NULL AUTO_INCREMENT,
+  `1` tinyint(1) NOT NULL,
+  `2` tinyint(1) NOT NULL,
+  `3` tinyint(1) NOT NULL,
+  `4` tinyint(1) NOT NULL,
+  `5` tinyint(1) NOT NULL,
+  PRIMARY KEY (`mojligaBehandlingarId`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `mojligabehandlingar`
+--
+
+INSERT INTO `mojligabehandlingar` (`mojligaBehandlingarId`, `1`, `2`, `3`, `4`, `5`) VALUES
+(1, 1, 0, 1, 0, 1);
 
 -- --------------------------------------------------------
 
