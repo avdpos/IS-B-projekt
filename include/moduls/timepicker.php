@@ -1,6 +1,6 @@
 <html>
 <body>
-<select name="tid" id="Tid">
+<select name="tid" id="tid">
     <option value="0700">07:00</option>
     <option value="0800">08:00</option>
     <option value="0900">09:00</option>

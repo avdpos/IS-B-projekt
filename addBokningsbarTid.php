@@ -13,8 +13,8 @@
         <?php include 'include/views/_header.php' ?>
         <?php include 'include/moduls/datepicker.php' ?>
         </div>
-            <form method="post" action="include/moduls/insertBooking.php">
-                <table class="form">
+            <form method="post" action="include/moduls/insert_massagetid.php">
+                <table>
                     <tr>
                         <th><label for="Date">Datum</label></th>
                         <td>

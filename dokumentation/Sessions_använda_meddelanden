@@ -1,0 +1,4 @@
+'meddelande'        för att skicka enkelt meddelande från sql-query
+                    användt i 
+                        insert_massagetid.php
+                        addBokningsbarTid.php (ska användas)
