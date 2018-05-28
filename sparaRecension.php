@@ -1,13 +1,17 @@
 <?php
 
 
-include "include/moduls/dbConnection.php";
 
+include "include/moduls/dbConnection.php";
 $username = $conn->real_escape_string($_POST["username"]);
 $recension = $conn->real_escape_string($_POST["recension"]);
 
-$query = "INSERT INTO recension (Username, Recension) VALUES('$username','$recension')";
-$conn->query($query);
+$query_one = "INSERT INTO recension (Recension) VALUES('$recension')";
+$connection->query($query_one);
+
+$query_two = "INSERT INTO bestallare (Username) VALUES('$username')";
+$connection->query($query_two);
+
 header("Location: recension.php");
 
 
