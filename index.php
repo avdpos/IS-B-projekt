@@ -15,6 +15,11 @@
 		</div>
 
 		<h1> INdex-sidan</h1>
+		<?php 
+		if (session_status() == PHP_SESSION_NONE) {
+			session_start();
+		}
+		echo $_SESSION["loginstatus"];?>
 	</body>
 
 

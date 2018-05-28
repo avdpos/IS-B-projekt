@@ -89,10 +89,10 @@ if (sizeof($errors) == 0)
                     <tr>
                         <th><label for="Username">Username</label></th>
                         <td>
-                            <input type="text" name="Username" id="Username" required>
-                            <?php if (!empty($errors["username"]))
+                            <input type="text" name="Namn" id="Namn" required>
+                            <?php if (!empty($errors["Namn"]))
                                     {
-                                        echo $errors["username"];
+                                        echo $errors["Namn"];
                                     }   
                             ?>
                         </td>

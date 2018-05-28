@@ -17,13 +17,14 @@ $salt = $salt2["Salt"];*/
 
 
 //hämta lösenord
-$sqlgetPassword ="SELECT Password, Email FROM massor
-                    WHERE UserName LIKE ('$username')";
+$sqlgetPassword ="SELECT Password, Email, MassorId FROM massor
+                    WHERE Namn LIKE ('$username')";
 $dbP = $conn->query($sqlgetPassword);
 //Detta gör att det fungerar, men jag vet inte riktigt varför.
 $Pass = $dbP->fetch_assoc();
 $dbPassword = $Pass["Password"];
 $dbEmail    = $Pass["Email"];
+$massorId   = $Pass["MassorId"]
 
 
 //gör om lösenord till det krypterade lösenordet
@@ -33,7 +34,7 @@ $dbEmail    = $Pass["Email"];
 //jämför lösenorden så att de är samma
 if ($dbPassword == $password)
 {   
-    $sql    =   "SELECT massorId FROM "
+
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -43,7 +44,7 @@ if ($dbPassword == $password)
     $_SESSION["loginstatus"]    =   TRUE;
     $_SESSION["bestallare"]     =   FALSE;
     $_SESSION["massor"]         =   TRUE;
-    $_SESSION["massorId"]       =
+    $_SESSION["massorId"]       =   $$massorId;
 
     header("Location: index.php");
 }
