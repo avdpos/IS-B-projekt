@@ -4,7 +4,7 @@
 
 
 
-include "include/moduls/dbConnection.php";
+include 'include/moduls/dbconnection.php';
 $query = "SELECT Username, Recension FROM bestallare,recension WHERE bestallare.BestallareID=recension.BestallareID";
 $result = $conn->query($query);
 
