@@ -15,6 +15,7 @@
         <li><a href="bestallreg.php">Registrera beställare</a></li>
         <li><a href="addbokningsbarTid.php">Bokningsbara tider</a></li>
         <li><a href="recension.php">Recensioner</a></li>
+        <li><a href="logga_ut.php">Logga ut</a></li>
     </ul>
 </body>
 </html>

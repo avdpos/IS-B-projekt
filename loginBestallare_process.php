@@ -17,9 +17,12 @@ $salt = $salt2["Salt"];*/
 
 
 //hämta lösenord
-$sqlgetPassword ="SELECT Password, Email, BestallarId FROM bestallare
-                    WHERE Namn LIKE ('$username')";
+echo $username;
+echo $password;
+$sqlgetPassword ="SELECT Password, Email, BestallareId FROM bestallare
+                    WHERE Username LIKE '$username'";
 $dbP = $conn->query($sqlgetPassword);
+
 //Detta gör att det fungerar, men jag vet inte riktigt varför.
 $Pass = $dbP->fetch_assoc();
 $dbPassword = $Pass["Password"];
@@ -47,5 +50,5 @@ if ($dbPassword == $password)
     header("Location: index.php");
 }
 else {
-    header("Location: loggin.php");
+    header("Location: loggainbestallare.php");
 }

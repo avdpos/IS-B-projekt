@@ -17,20 +17,17 @@ $salt = $salt2["Salt"];*/
 
 
 //hämta lösenord
-$sql ="SELECT Password FROM massor WHERE Namn LIKE '$username'";
+$sql ="SELECT Password, Email, MassorId FROM massor WHERE Username LIKE '$username'";
 $result = $conn->query($sql);
 
 $Pass = $result->fetch_assoc();
 
-$dbPassword = $Pass["Password"];/*
+$dbPassword = $Pass["Password"];
 $dbEmail    = $Pass["Email"];
-$massorId   = $Pass["MassorId"];*/
+$massorId   = $Pass["MassorId"];
 
-
-//gör om lösenord till det krypterade lösenordet
-
-/*$password=md5($salt . $password . $salt);*/
-
+echo $Pass['Password'];
+/*
 //jämför lösenorden så att de är samma
 if ($dbPassword == $password)
 {   
@@ -49,5 +46,6 @@ if ($dbPassword == $password)
     header("Location: index.php");
 }
 else {
-    header("Location: loggin.php");
-}
+    $_SESSION["message"]        =$dbPassword;
+    header("Location: loginMassor_Process.php");
+}*/
