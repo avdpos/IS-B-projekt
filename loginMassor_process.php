@@ -17,7 +17,7 @@ $salt = $salt2["Salt"];*/
 
 
 //hämta lösenord
-$sql ="SELECT Password, Email, MassorId FROM massor WHERE Username LIKE '$username'";
+$sql ="SELECT Password, Email, MassorId FROM massor WHERE Namn LIKE '$username'";
 $result = $conn->query($sql);
 
 $Pass = $result->fetch_assoc();
@@ -27,7 +27,7 @@ $dbEmail    = $Pass["Email"];
 $massorId   = $Pass["MassorId"];
 
 echo $Pass['Password'];
-/*
+
 //jämför lösenorden så att de är samma
 if ($dbPassword == $password)
 {   
@@ -48,4 +48,4 @@ if ($dbPassword == $password)
 else {
     $_SESSION["message"]        =$dbPassword;
     header("Location: loginMassor_Process.php");
-}*/
+}
