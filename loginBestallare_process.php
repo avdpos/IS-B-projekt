@@ -25,8 +25,8 @@ $dbP = $conn->query($sqlgetPassword);
 
 //Detta gör att det fungerar, men jag vet inte riktigt varför.
 $Pass = $dbP->fetch_assoc();
-$dbPassword = $Pass["Password"];
-$dbEmail    = $Pass["Email"];
+$dbPassword     =   $Pass["Password"];
+$dbEmail        =   $Pass["Email"];
 $bestallarId    =   $Pass["BestallarId"];
 
 

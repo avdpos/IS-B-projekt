@@ -4,16 +4,7 @@ include 'include/moduls/dbconnection.php';
 $username   = trim(mysqli_real_escape_string($conn, $_POST['UserName']));
 $password   = mysqli_real_escape_string($conn, $_POST['Password']);
 
-//hämta salt
 
-// $username och $password har rätt "värde".
-// SQL:n ger inget vettigt resultat här. Fungerar i phpMyAdmin.
-/*$sqlgetSalt = "SELECT Salt FROM userdata
-                    WHERE UserName LIKE ('$username')";
-$salt1     = $conn->query($sqlgetSalt);
-//Detta gör att det fungerar, men jag vet inte riktigt varför.
-$salt2 = $salt1->fetch_assoc();
-$salt = $salt2["Salt"];*/
 
 
 //hämta lösenord
