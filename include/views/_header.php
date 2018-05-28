@@ -14,6 +14,7 @@
         <li><a href="massorreg.php">Registrera massör</a></li>
         <li><a href="bestallreg.php">Registrera beställare</a></li>
         <li><a href="addbokningsbarTid.php">Bokningsbara tider</a></li>
+        <li><a href="recension.php">Recensioner</a></li>
     </ul>
 </body>
 </html>
