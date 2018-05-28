@@ -6,65 +6,38 @@ include "dbconnection.php";
 $date       =mysqli_real_escape_string($conn, $_POST['date']);
 $tid        =mysqli_real_escape_string($conn, $_POST['tid']);
 
-$massorID   = 1; //$_SESSION['massorId'];
+//satt för test ska vara från $_SESSION
+$massorID   = $_SESSION['massorId'];
 
 $klassisk   =mysqli_real_escape_string($conn, $_POST['klassisk']);
-$thai       =mysqli_real_escape_string($conn, $_POST['thai']);
+$thai       =mysqli_real_escape_string($conn, $_PcOST['thai']);
 $idrott     =mysqli_real_escape_string($conn, $_POST['idrott']);
 $fot        =mysqli_real_escape_string($conn, $_POST['fot']);
 $huvud      =mysqli_real_escape_string($conn, $_POST['huvud']);
 
-
-
-
-/* Utkommenterad kod för att testa ny lösning
-
-//kontrollera ifall denna kombination av behandlignar finns i databasen
-$sql        ="SELECT mojligaBehandlingarId FROM mojligabehandlingar WHERE
-                1 LIKE '$klassisk' AND
-                2 LIKE '$thai' AND
-                3 LIKE '$idrott' AND
-                4 LIKE '$fot' AND
-                5 LIKE '$huvud'";
-
-$result     =$conn->query($sql);
-
-//ifall den inte fanns, sätt in den i databasen
 if (!$result)
-{
-    $sql        ="INSERT INTO mojligaBehandlingar(1, 2, 3, 4, 5)
-                    VALUES('$klassisk', '$thai', '$idrott', '$fot', '$huvud')";
+/*
+$sql        ="INSERT INTO mojligaBehandlingar(1, 2, 3, 4, 5)
+                VALUES('$klassisk', '$thai', '$idrott', '$fot', '$huvud')
+                WHERE NOT EXISTS (SELECT"*/
 
-    $conn->query($sql);
 
-    // hämta sedan mojligbehandlingsID
 
-    $sql        ="SELECT mojligaBehandlingarId FROM mojligabehandlingar WHERE
-                1 LIKE '$klassisk' AND
-                2 LIKE '$thai' AND
-                3 LIKE '$idrott' AND
-                4 LIKE '$fot' AND
-                5 LIKE '$huvud'";
-    
-    $result     =$conn->query($sql);
-}
-//byt namn på $row till något tydligt.
-$mojligBehandlingsId    =   $result->fetch();
 
-//skapa massagetid, meddelanden sparas i session för att ropa tillbaka hut det gick.
-$sql        ="INSERT INTO massagetid(Datum, StartTid, MassorId, BehandlingsId)
-                VALUES('$date', '$tid', '$massorId', '$mojligBehandlingsId')";
+//placeholder på behandlingsId
+$sql        ="INSERT INTO massagetid(MassorId, Datum, StartTid, BehandlingsId) VALUES ('$massorId, '$date', '$tid', '2')"
+
 
 if ($conn->query($sql) === TRUE) {
     $_SESSION['message']    =   "Massagetid skapad";
-    //gå till rätt plats
-    header("Location: index.php");
+
+    
     mysqli_close($conn);
+    header("Location: addBokningsbartid.php");
 } else {
     $_SESSION['message']    =   "Något blev fel, försök igen";
     mysqli_close($conn);
-    //
     
+    header("Location: addBokningsbartid.php");
 }
 
-*/

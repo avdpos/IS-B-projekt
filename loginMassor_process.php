@@ -17,14 +17,14 @@ $salt = $salt2["Salt"];*/
 
 
 //hämta lösenord
-$sqlgetPassword ="SELECT Password, Email, MassorId FROM massor
-                    WHERE Namn LIKE ('$username')";
-$dbP = $conn->query($sqlgetPassword);
-//Detta gör att det fungerar, men jag vet inte riktigt varför.
-$Pass = $dbP->fetch_assoc();
-$dbPassword = $Pass["Password"];
+$sql ="SELECT Password FROM massor WHERE Namn LIKE '$username'";
+$result = $conn->query($sql);
+
+$Pass = $result->fetch_assoc();
+
+$dbPassword = $Pass["Password"];/*
 $dbEmail    = $Pass["Email"];
-$massorId   = $Pass["MassorId"]
+$massorId   = $Pass["MassorId"];*/
 
 
 //gör om lösenord till det krypterade lösenordet
