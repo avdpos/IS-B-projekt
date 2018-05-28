@@ -10,7 +10,7 @@
     <ul id="meny">
         <li><a href="index.php">Home</a></li>
         <li><a href="loggainmassor.php">Logga in massör</a></li>
-        <li><a href="loggainmassage.php">Logga in beställare</a></li>
+        <li><a href="loggainbestallare.php">Logga in beställare</a></li>
         <li><a href="massorreg.php">Registrera massör</a></li>
         <li><a href="bestallreg.php">Registrera beställare</a></li>
         <li><a href="addbokningsbarTid.php">Bokningsbara tider</a></li>
