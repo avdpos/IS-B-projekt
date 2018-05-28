@@ -3,8 +3,8 @@
 //Modell för att plocka upp 
 $errors =   null;
 $errors =   array();
-
-if (preg_match("/\S+/", $_POST['Username']) === 0)
+/*
+if (preg_match("/\S+/", $_POST['Namn']) === 0)
 {
     $errors["username"] = "Post a  name";
 }
@@ -24,38 +24,39 @@ if (strlen($_POST['regPassword']) < 7)
 {
     $errors["passwordLenght"] = "Password is to short";
 }
-
+*/
 // den här funktionen går inte in Vad stämmer inte?
 if (sizeof($errors) == 0)
 {   
     //Av någon anledning så vägrar "include/
         /*funktioner för att registrera en ny användare*/
-        include 'include/models/dbconnection.php';
+        include 'include/moduls/dbconnection.php';
 
         /*ta datan*/
-        $userName   =mysqli_real_escape_string($conn, $_POST['Username']);
+        $userName   =mysqli_real_escape_string($conn, $_POST['Namn']);
         $email      =mysqli_real_escape_string($conn, $_POST['Email']);
         $password   =mysqli_real_escape_string($conn, $_POST['regPassword']);
-        $kliniknamn =mysqli_real_escape_String($conn, $_POST['Kliniknamn']);
+        $kliniknamn =mysqli_real_escape_String($conn, $_POST['Klinik']);
 
         $userName   =trim($userName, " ");
         $kliniknamn =trim($kliniknamn, " ");
         $email      =trim($email, " ");
         //$salt       ='saltat';
-        $salt       =uniqid(mt_rand(), true);
-        $password   =md5($salt . $password . $salt);
+        /*$salt       =uniqid(mt_rand(), true);
+        $password   =md5($salt . $password . $salt);*/
 
         //insert i sql
         
-        $sql        ="INSERT INTO massor(Username, KlinikNamn, Email, Password, Salt)
-                        VALUES('$userName', '$kliniknamn', '$email', '$password', '$salt')";
+        $sql        ="INSERT INTO massor(Namn, KlinikNamn, Email, Password)
+                        VALUES('$userName', '$kliniknamn', '$email', '$password')";
 
         if ($conn->query($sql) === TRUE) {
             echo "New user created successfully";
-            header("Location: index.php");
+            
+            //
             mysqli_close($conn);
+            header("Location: index.php");
 
-            $sql    ="SELECT massor"
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
             mysqli_close($conn);
@@ -83,7 +84,7 @@ if (sizeof($errors) == 0)
         <?php include 'include/views/_header.php' ?>
         
         </div type="regForm">
-            <form method="post" onsubmit="return validateRegistration()" action="validateBestallarReg.php">
+            <form method="post" onsubmit="return validateRegistration()" action="validateMassorReg.php">
                 <table class="form">
                     <tr>
                         <th><label for="Username">Username</label></th>

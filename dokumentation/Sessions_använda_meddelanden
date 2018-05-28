@@ -2,3 +2,11 @@
                     användt i 
                         insert_massagetid.php
                         addBokningsbarTid.php (ska användas)
+'massorId'
+
+
+$_SESSION["username"]       
+$_SESSION["email"]          
+$_SESSION["loginstatus"]   
+$_SESSION["bestallare"]     = TRUE /FALSE
+$_SESSION["massor"]          = TRUE /FALSE

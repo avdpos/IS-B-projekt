@@ -11,8 +11,10 @@
 
 
 		<div>
-				<?php include 'include/views/_header.php' ?>
-				</div>
+			<?php include 'include/views/_header.php' ?>
+		</div>
+
+		<h1> INdex-sidan</h1>
 	</body>
 
 

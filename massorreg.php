@@ -15,12 +15,12 @@
         </div type="regForm">
         <br>
         	 <h3>Här registreras massörer</h3>
-            <form method="post" onsubmit="return validateRegistration()" action="massorinlog.php">
+            <form method="post" onsubmit="return validateRegistration()" action="validateMassorReg.php">
                 <table class="form">
                     <tr>
                         <th><label for="Namn">Namn</label></th>
                         <td>
-                            <input type="text" name="Namn" id="namn" required>
+                            <input type="text" name="Namn" id="Namn" required>
 
                         </td>
                     </tr>

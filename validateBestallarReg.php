@@ -3,10 +3,10 @@
 //Modell för att plocka upp 
 $errors =   null;
 $errors =   array();
-
-if (preg_match("/\S+/", $_POST['Username']) === 0)
+/*
+if (preg_match("/\S+/", $_POST['Namn']) === 0)
 {
-    $errors["username"] = "Post a  name";
+    $errors["namn"] = "Post a  name";
 }
 if (preg_match("/(\S+\@+\S+\.+\S+)/", $_POST['Email'] === 0))
 {
@@ -20,16 +20,16 @@ if (strlen($_POST['regPassword']) < 7)
 {
     $errors["passwordLenght"] = "Password is to short";
 }
-
+*/
 // den här funktionen går inte in Vad stämmer inte?
 if (sizeof($errors) == 0)
 {   
     //Av någon anledning så vägrar "include/
         /*funktioner för att registrera en ny användare*/
-        include 'include/models/dbconnection.php';
+        include 'include/moduls/dbconnection.php';
 
         /*ta datan*/
-        $userName   =mysqli_real_escape_string($conn, $_POST['Username']);
+        $userName   =mysqli_real_escape_string($conn, $_POST['Namn']);
         $email      =mysqli_real_escape_string($conn, $_POST['Email']);
         $password   =mysqli_real_escape_string($conn, $_POST['regPassword']);
 
@@ -37,13 +37,13 @@ if (sizeof($errors) == 0)
         $userName   =trim($userName, " ");
         $email      =trim($email, " ");
         //$salt       ='saltat';
-        $salt       =uniqid(mt_rand(), true);
-        $password   =md5($salt . $password . $salt);
+        //$salt       =uniqid(mt_rand(), true);
+        //$password   =md5($salt . $password . $salt);
 
         //insert i sql
         
-        $sql        ="INSERT INTO userdata(UserName, Email, Password, Salt)
-                        VALUES('$userName', '$email', '$password', '$salt')";
+        $sql        ="INSERT INTO bestallare(Username, Email, Password/*, Salt*/)
+                        VALUES('$userName', '$email', '$password'/*, '$salt'*/)";
 
         if ($conn->query($sql) === TRUE) {
             echo "New user created successfully";
@@ -76,15 +76,15 @@ if (sizeof($errors) == 0)
         <?php include 'include/views/_header.php' ?>
         
         </div type="regForm">
-            <form method="post" onsubmit="return validateRegistration()" action="validateRegistration.php">
+            <form method="post" onsubmit="return validateRegistration()" action="validateBestallarReg.php">
                 <table class="form">
                     <tr>
                         <th><label for="Username">Username</label></th>
                         <td>
-                            <input type="text" name="Username" id="Username" required>
-                            <?php if (!empty($errors["username"]))
+                            <input type="text" name="Namn" id="Namn" required>
+                            <?php if (!empty($errors["namn"]))
                                     {
-                                        echo $errors["username"];
+                                        echo $errors["namn"];
                                     }   
                             ?>
                         </td>

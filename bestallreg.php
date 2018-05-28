@@ -20,14 +20,7 @@
                     <tr>
                         <th><label for="Namn">Namn</label></th>
                         <td>
-                            <input type="text" name="Namn" id="namn" required>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="personnummer">Personnummer</label></th>
-                        <td>
-                            <input type="text" name="personnummer" id="personnummer" required>
+                            <input type="text" name="Namn" id="Namn" required>
 
                         </td>
                     </tr>
@@ -41,7 +34,7 @@
                     <tr>
                         <th><label for="Password">Lösenord</label></th>
                         <td>
-                            <input type="password" name="regPassword1" id="regPassword1" required>
+                            <input type="password" name="regPassword" id="regPassword" required>
                         </td>
                     <tr >
                         <th><label for="Password2">Bekräfta lösenord</label></th>
