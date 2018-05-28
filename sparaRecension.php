@@ -2,7 +2,7 @@
 
 
 
-include "include/moduls/dbConnection.php";
+include 'include/moduls/dbconnection.php';
 $username = $conn->real_escape_string($_POST["username"]);
 $recension = $conn->real_escape_string($_POST["recension"]);
 
