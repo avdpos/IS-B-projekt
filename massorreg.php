@@ -41,7 +41,7 @@
                     <tr>
                         <th><label for="Password">Lösenord</label></th>
                         <td>
-                            <input type="password" name="regPassword1" id="regPassword1" required>
+                            <input type="password" name="regPassword" id="regPassword" required>
                         </td>
                     <tr >
                         <th><label for="Password2">Bekräfta lösenord</label></th>
