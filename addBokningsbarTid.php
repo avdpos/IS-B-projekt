@@ -13,6 +13,11 @@
         <?php include 'include/views/_header.php' ?>
         <?php include 'include/moduls/datepicker.php' ?>
         </div>
+            <?php if (!empty($_SESSION["message"])){
+                echo $_SESSION["message"];
+            }
+            ?>
+        
             <form method="post" action="include/moduls/insert_massagetid.php">
                 <table>
                     <tr>

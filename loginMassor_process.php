@@ -41,7 +41,7 @@ if ($dbPassword == $password)
     $_SESSION["loginstatus"]    =   TRUE;
     $_SESSION["bestallare"]     =   FALSE;
     $_SESSION["massor"]         =   TRUE;
-    $_SESSION["massorId"]       =   $$massorId;
+    $_SESSION["massorId"]       =   $massorId;
 
     header("Location: index.php");
 }

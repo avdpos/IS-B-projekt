@@ -2,7 +2,7 @@
 
 <?php>
 	include "include/moduls/dbConnection.php";
-	$query = "SELECT Datum, StartTid, Klinik FROM BokningsbarTid, Massor WHERE BokningsbarTid.MassorID=Massor.MassorID AND BestallarID IS NULL";
+	$query = "SELECT Datum, StartTid, KlinikNamn FROM massagetid, massor WHERE massagetid.MassorId=massor.MassorId AND BestallarId IS NULL";
 	$result = $conn->query($query);
 ?>
 
@@ -15,7 +15,7 @@
 	<body>
 		<div id = "tider">
 			<h1><b>Tillgängliga tider:</b><h1>
-			<?php>
+			<?php
 				while($row = $result->fetch_assoc())
 				{
 					echo $row["Namn"], " ", $row["Datum"], " ", $row["StartTid"];
