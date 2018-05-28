@@ -20,7 +20,7 @@
                 <br>
                 <br>
                 <br>
-                    <form method="post" action="tillagdtid.php">
+                    <form method="post" action="loggainbestallare.php">
                         <table class="form">
                             <tr>
                                 <th><label for="Date">Date</label></th>
