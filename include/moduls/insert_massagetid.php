@@ -17,7 +17,8 @@ $idrott     =mysqli_real_escape_string($conn, $_POST['idrott']);
 $fot        =mysqli_real_escape_string($conn, $_POST['fot']);
 $huvud      =mysqli_real_escape_string($conn, $_POST['huvud']);
 
-
+//placeholder 2:a
+$behandlingsId  =   '2';
 /*
 $sql        ="INSERT INTO mojligaBehandlingar(1, 2, 3, 4, 5)
                 VALUES('$klassisk', '$thai', '$idrott', '$fot', '$huvud')
@@ -27,7 +28,7 @@ $sql        ="INSERT INTO mojligaBehandlingar(1, 2, 3, 4, 5)
 
 
 //placeholder på behandlingsId
-$sql        ="INSERT INTO massagetid(MassorId, Datum, StartTid, BehandlingsId) VALUES ('$massorID, '$date', '$tid', '2')";
+$sql        ="INSERT INTO massagetid(MassorId, Datum, StartTid, BehandlingsId) VALUES ('$massorID', '$date', '$tid', '$behandlingsId')";
 
 
 if ($conn->query($sql) === TRUE) {
@@ -37,7 +38,8 @@ if ($conn->query($sql) === TRUE) {
     mysqli_close($conn);
     header("Location: ../../addBokningsbartid.php");
 } else {
-    $_SESSION["message"]    =   "Något blev fel, försök igen";
+    $_SESSION["message"]    =   "Något blev fel, försök igen, $date, $tid, $massorID, $behandlingsId";
+
     mysqli_close($conn);
     
     header("Location: ../../addBokningsbartid.php");
