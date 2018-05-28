@@ -23,14 +23,14 @@
 	  <h3>Här loggar beställare in</h3>
 		<div id="formular">
 			<form method="post" onsubmit="return validateLogin()" action="loginBestallare_process.php">
-                Username:<br>
+                Användarnamn:<br>
                 <input type="text" name="UserName" id="UserName"
-                placeholder="Write username here" require><br>
-                Password:<br>
+                placeholder="Skriv användarnamn" require><br>
+                Lösenord:<br>
                 <input type="password" name="Password" id="Password"
-                placehinputolder="Write password here" require><br>
-                
-                <input type="submit" class="button" name="Submit" value="login"  >
+                placeholder="Skriv lösenord" require><br>
+
+                <input type="submit" class="button" name="Submit" value="logga in"  >
             </form>
 		</div>
 
