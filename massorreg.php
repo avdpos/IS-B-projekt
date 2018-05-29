@@ -16,7 +16,7 @@
         <?php include 'include/views/_header.php' ?>
         </div type="regForm">
         
-        <h3>Här registreras massörer</h3>
+        <h1>Registrera ny massör</h1>
                 <form method="post" >
         <div class="login-page">
                <div class="form">
