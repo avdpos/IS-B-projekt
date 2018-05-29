@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/_header.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Massagetid</title>
 </head>
 
 <body>
-    <div>
-        <?php include 'include/views/_header.php' ?>
-        <?php include 'include/moduls/datepicker.php' ?>
+    <div class="wrapper">
+        <div>
+            <?php include 'include/views/_header.php' ?>
+            <?php include 'include/moduls/datepicker.php' ?>
+            <br><br><br><br>
         </div>
             <?php if (!empty($_SESSION["message"])){
                 echo $_SESSION["message"];
@@ -43,7 +46,7 @@
                 <input type="submit" class="button" name="Submit" value="registrera tid">
             </form>
         <div>
-        <?php include 'include/views/_footer.php'?> 
+        
     </div>
          
 </body>

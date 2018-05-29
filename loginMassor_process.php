@@ -30,7 +30,6 @@ if ($dbPassword == $password)
     $_SESSION["username"]       =   $username;
     $_SESSION["email"]          =   $dbEmail;
     $_SESSION["loginstatus"]    =   TRUE;
-    $_SESSION["bestallare"]     =   FALSE;
     $_SESSION["massor"]         =   TRUE;
     $_SESSION["massorId"]       =   $massorId;
 

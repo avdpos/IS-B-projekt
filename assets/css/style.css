@@ -207,3 +207,15 @@ body{
 .content{
 text-align:center;
 color:darkgreen;
+}
+
+.bokningsbartid{
+  width: 50%;
+  color: black;
+  border-style: solid;
+  border-width: 3px;
+  border-color: green;
+  padding:  5%;
+  margin: 5%;
+
+}

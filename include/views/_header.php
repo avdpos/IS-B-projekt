@@ -24,15 +24,25 @@
             if ($_SESSION["massor"] == TRUE) {
                 echo    "<li><a href='addbokningsbarTid.php'>Lägg till bokningsbara tider</a></li>";
             }
-        } ?>
-        <li><a href="recension.php">Recensioner</a></li>
-        <li><a href="recensioner.php">Recensioner</a></li>
-        <?php
-        if (!empty($_SESSION["loginstatus"])) {
-            if ($_SESSION["loginstatus"] == TRUE){
-                echo "<li><a href='logga_ut.php'>Logga ut</a></li>";
+        }
+        if (!empty($_SESSION["bestallare"]))
+        {
+            if ($_SESSION["bestallare"] == TRUE) 
+            {
+                echo "<li><a href='recensioner.php'>Skriv recensioner</a></li>";
+            }
+        }
+
+        if (!empty($_SESSION["loginstatus"])) 
+        {
+            if ($_SESSION["loginstatus"] == TRUE)
+            {
+                echo "<li><a href='visaminarecensioner.php'>Mina recensioner</a></li>
+                <li><a href='logga_ut.php'>Logga ut</a></li>
+                <li><a href='recensioner.php'>Recensioner</a></li>";
             } 
         }
+        
         ?>
     </ul>
 </body>
