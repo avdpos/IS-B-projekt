@@ -21,13 +21,14 @@
 				if (session_status() == PHP_SESSION_NONE) {
 					session_start();
 				}
+				
 				while($row = $result->fetch_assoc())
 				{
 					echo $row["KlinikNamn"], " ", $row["Datum"], " ", $row["StartTid"];
 					$_SESSION["bokning"]	=	$row["TidId"];
 					$_SESSION["bokning_massor"]	=	$row["MassorId"];
 
-					echo	"<form method='post' action='include/moduls/bokatid.php'>
+					echo	"<form method='post' action='include/moduls/bokning_inloggningskontroll.php'>
 								<button type='submit'>Boka tid</button> 
 							</form>
 							<form method='post' action='recensioner.php'>

@@ -20,10 +20,10 @@
                 <form method="post" >
         <div class="login-page">
                <div class="form">
-                <form class="login-form" onsubmit="return validateRegistration()" action="validateMassorReg.php">
+                <form method="post" class="login-form" onsubmit="return validateRegistration()" action="validateMassorReg.php">
                     <input type="text" placeholder="Namn" name="Namn" id="Namn" required>
                     <input type="text" placeholder="Klinik" name="klinik" id="klinik" required>
-                    <input type="txt" placeholder="Email" name="email" id="email" required>
+                    <input type="text" placeholder="Email" name="email" id="email" required>
                     <input type="password" placeholder="Lösenord" name="regPassword2" id="regpassword1" required>
                     <input type="password" placeholder="Bekräfta lösenord" name="regPassword2" id="regpassword1" required>
                     <input id="knapp" type="submit" value="Skapa konto" name="submit" id="submitButton" class="button">

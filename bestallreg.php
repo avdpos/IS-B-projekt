@@ -21,7 +21,7 @@
         <div class="login-page">
                <div class="form">
                 <form class="register-form"></form>
-                <form class="login-form" onsubmit="return validateRegistration()" action="validateBestallarReg.php">
+                <form method="post" class="login-form" onsubmit="return validateRegistration()" action="validateBestallarReg.php">
                     <input type="text"      placeholder="Namn"              name="Namn"         required>
                     <input type="text"      placeholder="Email"             name="Email"        required>
                     <input type="password"  placeholder="Lösenord"          name="Password"     required>

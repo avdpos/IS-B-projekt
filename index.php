@@ -15,7 +15,7 @@
     <div>
         <?php include 'include/views/_header.php' ?>
         <?php include 'include/moduls/datepicker.php' ?>
-        </div>
+    </div>
         <br>
         <br>
         <br>

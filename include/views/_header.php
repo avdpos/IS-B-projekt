@@ -26,6 +26,7 @@
             }
         } ?>
         <li><a href="recension.php">Recensioner</a></li>
+        <li><a href="recensioner.php">Recensioner</a></li>
         <?php
         if (!empty($_SESSION["loginstatus"])) {
             if ($_SESSION["loginstatus"] == TRUE){

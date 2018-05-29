@@ -29,16 +29,14 @@ if (sizeof($errors) == 0)
         include 'include/moduls/dbconnection.php';
 
         /*ta datan*/
-        $userName   =mysqli_real_escape_string($conn, $_POST['Namn']);
-        $email      =mysqli_real_escape_string($conn, $_POST['Email']);
+        $userName   =mysqli_real_escape_string($conn, $_POST["Namn"]);
+        $email      =mysqli_real_escape_string($conn, $_POST["Email"]);
         $password   =mysqli_real_escape_string($conn, $_POST["Password"]);
 
 
         $userName   =trim($userName, " ");
         $email      =trim($email, " ");
-        //$salt       ='saltat';
-        //$salt       =uniqid(mt_rand(), true);
-        //$password   =md5($salt . $password . $salt);
+        
 
         //insert i sql
         
@@ -104,7 +102,7 @@ if (sizeof($errors) == 0)
                     <tr>
                         <th><label for="Password">Password</label></th>
                         <td>
-                            <input type="password" name="regPassword" id="regPassword" required>
+                            <input type="password" name="Password" id="Password" required>
                             <?php if (!empty($errors["passwordLenght"]))
                                     {
                                         echo $errors["passwordLenght"];
