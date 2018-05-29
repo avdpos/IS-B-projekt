@@ -2,8 +2,6 @@
 
 <?php
 
-
-
 include 'include/moduls/dbconnection.php';
 $query = "SELECT Username, Recension FROM bestallare,recension WHERE bestallare.BestallareID=recension.BestallareID";
 $result = $conn->query($query);
@@ -18,8 +16,8 @@ $result = $conn->query($query);
 		<link rel="stylesheet" href="assets/css/_header.css">
 	</head>
 	<body>
-
-			<?php include 'include/views/_header.php' ?>
+		<div><?php include 'include/views/_header.php' ?></div>
+		<h1>Skriv en recension!</h1>
 			
 			<div id="recensionsFormulär">
 				<h4> Skriv en recension av ditt besök nedan:</h4>
