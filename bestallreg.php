@@ -27,7 +27,7 @@
                     <input type="password"  placeholder="Lösenord"          name="Password"     required>
                     <input type="password"  placeholder="Bekräfta lösenord" name="regPassword2" required>
                     <input id="knapp" type="submit" value="Skapa konto"     name="submit" id="submitButton" class="button">
-                    <p class="message">Har du redan ett konto? <a href="loggainmassor.php">Logga in här!</a></p>
+                    <p class="message">Har du redan ett konto? <a href="loggainbestallare.php">Logga in här!</a></p>
                     <!--  <input type="submit" class="button" name="Submit" value="Registrera användare">-->
               </form>
              </div>

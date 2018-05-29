@@ -16,6 +16,7 @@
         <?php include 'include/views/_header.php' ?>
         <?php include 'include/moduls/datepicker.php' ?>
     </div>
+        <h1>Boka massage</h1>
         <br>
         <br>
         <br>
