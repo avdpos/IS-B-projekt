@@ -20,19 +20,10 @@ $result = $conn->query($query);
 	<body>
 
 			<?php include 'include/views/_header.php' ?>
-			<div id="recensioner">
-				<h4>Recensioner:</h4>
-				<?php
-					while($row = $result->fetch_assoc())
-					{
-						echo $row["Username"], ": ",$row["Recension"];
-						echo "<br/>";
-					}
-				?>
-			</div>
+			
 			<div id="recensionsFormulär">
 				<h4> Skriv en recension av ditt besök nedan:</h4>
-				<form action="sparaRecension.php" method="POST" name="recensionFormulär">		
+				<form action="include/moduls/sparaRecension.php" method="POST" name="recensionFormulär">		
 					<label>Användarnamn:</label><br/>
 					<input type="text" id="username" name="username" required>
 					<br/><br/>
