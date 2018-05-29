@@ -14,20 +14,21 @@
       <h3>Här loggar beställare in</h3>
 		
 	<div class="login-page">
-	      <form method="post" onsubmit="return validateLogin()" action="loginBestallare_process.php">
+	      <form >
         <div class="form">
           <form class="register-form">
           </form>
 	      
-          <form class="login-form">
-          <input type="text" name="UserName" id="UserName"
-          placeholder="Skriv användarnamn" require><br>
+          <form class="login-form" method="post" onsubmit="return validateLogin()" action="loginBestallare_process.php">
+						<input type="text" name="UserName" id="UserName"
+						placeholder="Skriv användarnamn" require><br>
 		  
-	   <input type="password" name="Password" id="Password"
-	   placeholder="Skriv lösenord" require><br>	
+						<input type="password" name="Password" id="Password"
+						placeholder="Skriv lösenord" require><br>	
 
-            <button>Logga in</button>
-            <p class="message">Har du inget konto? <a href="registrerabestallare.php">Skapa profil</a></p>
+						<
+            <input id="knapp" type="submit" value="Logga in" name="submit" id="submitButton" class="button">
+            <p class="message">Har du inget konto? <a href="bestallreg.php">Skapa profil</a></p>
            </form>
          </div>
        </div>

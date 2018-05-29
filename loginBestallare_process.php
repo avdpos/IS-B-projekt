@@ -27,7 +27,7 @@ $dbP = $conn->query($sqlgetPassword);
 $Pass = $dbP->fetch_assoc();
 $dbPassword     =   $Pass["Password"];
 $dbEmail        =   $Pass["Email"];
-$bestallarId    =   $Pass["BestallarId"];
+$bestallarId    =   $Pass["BestallareId"];
 
 
 //gör om lösenord till det krypterade lösenordet
@@ -45,8 +45,9 @@ if ($dbPassword == $password)
     $_SESSION["email"]          =   $dbEmail;
     $_SESSION["loginstatus"]    =   TRUE;
     $_SESSION["bestallare"]     =   TRUE;
-    $_SESSION["bestallarId"]    =   $bestallarId;
+    $_SESSION["bestallareId"]    =   $bestallarId;
 
+    
     header("Location: index.php");
 }
 else {

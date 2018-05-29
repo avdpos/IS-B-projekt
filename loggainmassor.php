@@ -30,14 +30,14 @@
                 placehinputolder="Write password here" require><br>
 
                 
-                <input type="submit" class="button" name="Submit" value="login"  >
+                <input id="knapp" type="submit" value="Logga in" name="submit" id="submitButton" class="button">
             </form>
         </div>
       </div>
 		</div>
 		<?php if (session_status() == PHP_SESSION_NONE) {
             session_start();
-		echo $_SESSION['message']; ?>
+		echo $_SESSION['message']; }?>
 
 	</body>
 </html>

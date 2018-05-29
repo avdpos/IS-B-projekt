@@ -12,19 +12,23 @@
 
 <?php
     include "include/moduls/dbconnection.php";
-
-    $tidid      =   $_SESSION["tidid"];
-    $sql        =   "SELECT Datum, Tid, KlinkNamn FROM massagetid, massor WHERE TidId LIKE '$tidid' AND massortid.MassorId = massor.massorId";
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    $tidid      =   $_SESSION["bokning"];
+    $sql        =   "SELECT Datum, StartTid, massor.KlinikNamn FROM massagetid, massor WHERE TidId LIKE $tidid AND massagetid.MassorId = massor.MassorId";
     $result     =   $conn->query($sql);
     $bokning    =   $result->fetch_assoc();   
 
 ?>
 <body>
+    
     <div class="wrapper">
+     <?php include "include/views/_header.php"; ?>
     <div>
-        <?php include 'include/views/_header.php';
-            echo "Du har bokat en tid " . $bokning['Datum'] . "klockan " . $bokning['Tid'] . "hos " . $bokning['KlinikNamn'];
-            echo "Bekrädtelse mejl är skickat med alla uppgifter till " . $_SESSION['email'];
+        <?php
+            echo "Du har bokat en tid " . $bokning["Datum"] . " klockan " . $bokning["StartTid"] . " hos " . $bokning["KlinikNamn"];
+            echo ". Bekrädtelse mejl är skickat med alla uppgifter till " . $_SESSION["email"];
         ?>
         
        
