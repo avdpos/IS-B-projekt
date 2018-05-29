@@ -45,7 +45,7 @@ if ($dbPassword == $password)
     $_SESSION["email"]          =   $dbEmail;
     $_SESSION["loginstatus"]    =   TRUE;
     $_SESSION["bestallare"]     =   TRUE;
-    $_SESSION["bestallareId"]    =   $bestallarId;
+    $_SESSION["bestallareId"]   =   $bestallarId;
 
     
     header("Location: index.php");

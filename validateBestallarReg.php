@@ -30,7 +30,7 @@ if (sizeof($errors) == 0)
 
         /*ta datan*/
         $userName   =mysqli_real_escape_string($conn, $_POST['Namn']);
-        $email      =mysqli_real_escape_string($conn, $_POST['mail']);
+        $email      =mysqli_real_escape_string($conn, $_POST['Email']);
         $password   =mysqli_real_escape_string($conn, $_POST["Password"]);
 
 
@@ -51,6 +51,7 @@ if (sizeof($errors) == 0)
             mysqli_close($conn);
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
+            echo $_POST['Namn'] . $_POST['Email'] . $_POST['Password'];
             mysqli_close($conn);
         }
 
