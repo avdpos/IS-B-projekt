@@ -41,9 +41,7 @@ if (sizeof($errors) == 0)
         $userName   =trim($userName, " ");
         $kliniknamn =trim($kliniknamn, " ");
         $email      =trim($email, " ");
-        //$salt       ='saltat';
-        /*$salt       =uniqid(mt_rand(), true);
-        $password   =md5($salt . $password . $salt);*/
+       
 
         //insert i sql
         

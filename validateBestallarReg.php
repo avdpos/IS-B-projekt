@@ -30,8 +30,8 @@ if (sizeof($errors) == 0)
 
         /*ta datan*/
         $userName   =mysqli_real_escape_string($conn, $_POST['Namn']);
-        $email      =mysqli_real_escape_string($conn, $_POST['Email']);
-        $password   =mysqli_real_escape_string($conn, $_POST['regPassword']);
+        $email      =mysqli_real_escape_string($conn, $_POST['mail']);
+        $password   =mysqli_real_escape_string($conn, $_POST["Password"]);
 
 
         $userName   =trim($userName, " ");
@@ -42,8 +42,8 @@ if (sizeof($errors) == 0)
 
         //insert i sql
         
-        $sql        ="INSERT INTO bestallare(Username, Email, Password/*, Salt*/)
-                        VALUES('$userName', '$email', '$password'/*, '$salt'*/)";
+        $sql        ="INSERT INTO bestallare(Username, Email, Password)
+                        VALUES('$userName', '$email', '$password')";
 
         if ($conn->query($sql) === TRUE) {
             echo "New user created successfully";
