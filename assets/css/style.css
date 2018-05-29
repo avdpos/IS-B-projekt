@@ -15,7 +15,12 @@ body{
 
 h1{
   color:green;
-    font-style: italic;
+  font-style: italic;
+  text-align: center;
+}
+
+#contact{
+  color:darkgreen;
 }
 
 .input-group input{
@@ -91,9 +96,6 @@ form{
   text-align:center;
 }
 
-
-/*ny login*/
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
@@ -115,7 +117,7 @@ form{
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #f2f2f2; /*grå text under username*/
+  background: #f2f2f2; 
   width: 100%;
   border: 0;
   margin: 0 0 15px;
@@ -138,7 +140,7 @@ form{
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047; /*LOGIN knappen*/
+  background: #43A047; 
 }
 .form .message {
   margin: 15px 0 0;
@@ -189,11 +191,11 @@ form{
 body{
 
     background-color:green;
-      background-image: url("havsbild.jpg");
+    background-image: url("");
 }
 
 .wrapper{
-  width: 850px;
+  width: 650px;
   margin: 0 auto;
   background-color:white;
   bottom: 0;
@@ -201,6 +203,7 @@ body{
   height:100%;
 }
 
-.img{
-    background-image: url("");
-}
+
+.content{
+text-align:center;
+color:darkgreen;

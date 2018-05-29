@@ -15,7 +15,7 @@
 		</body>
 
 <br>
-    <h3>Här loggar massörer in</h3>
+    <h1>Logga in Massör</h1>
     <div class="login-page">
         <div class="form">
          <form class="register-form">

@@ -11,7 +11,7 @@
 		<?php include 'include/views/_header.php' ?>
 	</div>
 		
-      <h3>Här loggar beställare in</h3>
+      <h1>Logga in Kund</h1>
 		
 	<div class="login-page">
 	      <form >
