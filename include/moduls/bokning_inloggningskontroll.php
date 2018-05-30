@@ -6,8 +6,9 @@ if (session_status() == PHP_SESSION_NONE) {
 if (!empty($_SESSION["loginstatus"]))
     {
         if($_SESSION["loginstatus"] == TRUE) {
+            $_SESSION['bokning']    =   $_POST["tid"];
             header("Location: bokatid.php");
-            echo "borde gått vidare";
+            
         }
         else 
         {

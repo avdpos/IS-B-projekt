@@ -29,7 +29,7 @@
         {
             if ($_SESSION["bestallare"] == TRUE) 
             {
-                echo "<li><a href='recensioner.php'>Skriv recensioner</a></li>";
+                echo "<li><a href='oskrivna_recensioner.php'>Skriv recensioner</a></li>";
             }
         }
 

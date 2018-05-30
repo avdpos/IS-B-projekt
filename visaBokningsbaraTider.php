@@ -32,13 +32,18 @@
 			while($row = $result->fetch_assoc())
 			{
 				echo "<div class=\"bokningsbartid\">", $row["KlinikNamn"], "<br> ", $row["Datum"], " ", $row["StartTid"];
-				$_SESSION["bokning"]	=	$row["TidId"];
-				$_SESSION["bokning_massor"]	=	$row["MassorId"];
+				/*$_SESSION["bokning"]	=	$row["TidId"];
+				$_SESSION["bokning_massor"]	=	$row["MassorId"];*/
+				$tid	=	$row["TidId"];
+				$massor	=	$row["MassorId"];
 
-				echo	"<form method='post' action='include/moduls/bokning_inloggningskontroll.php'>
+				echo	"<form method='post' action='include/moduls/bokning_inloggningskontroll.php'>							
+							<input type='hidden' value='$tid' name='tid'>
 							<button type='submit'>Boka tid</button> 
 						</form>
-						<form method='post' action='recensioner.php'>
+						
+						<form method='post' action='visa_recensioner_for_massorId.php'>
+							<input type='hidden' value='$massor' name='massor'>
 							<button type='submit'>Läs recensioner</button>
 						</form>";
 				echo 	"</div><br>";

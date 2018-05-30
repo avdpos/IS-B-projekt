@@ -26,12 +26,13 @@
     <div class="wrapper">
      <?php include "include/views/_header.php"; ?>
     <div>
+        <br><br><br><br><br>
         <?php
             echo "Du har bokat en tid " . $bokning["Datum"] . " klockan " . $bokning["StartTid"] . " hos " . $bokning["KlinikNamn"];
             echo ". Bekrädtelse mejl är skickat med alla uppgifter till " . $_SESSION["email"];
         ?>
         
-       
+       <br><br><br>
     </div>
 </body>
 </html>

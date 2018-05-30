@@ -31,19 +31,20 @@
         <?php
             while($row = $result->fetch_assoc())
 				{
-					echo $row["Namn"], " från ", $row["KlinikNamn"];
-					
-
-					echo	"<form method='post' action='skrivrecension.php'>
+                    $massorId = $row['MassorId'];
+                    echo    "<div class=\"besok\">Besök hos " . $row['Namn'] . " hos " . $row['KlinikNamn'];
+                    // sparar massörId som variabel för varje enskild recension, så att man kan ha flera massörer som väntar smtidigt.
+                    echo	"<form method='post' action='skrivrecension.php'>
+                                <input type='hidden' value='$massorId' name='massorId'>
 								<button type='submit'>Skriv recension</button> 
 							</form>";
-							
-					echo 	"<br>";
+						
+					echo 	"</div>";
                 }
         ?>
                
     
-        
+    </div>
     </div>
 </body>
 </html>
