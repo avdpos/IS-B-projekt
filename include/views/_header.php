@@ -12,7 +12,7 @@
         } ?>
 
     <ul id="meny">
-        <li><a href="index.php">Home</a></li>
+        <li><a href="index.php">Sök efter ledig massagetid</a></li>
         <?php if (empty($_SESSION["loginstatus"]))
         {
             echo "<li><a href='loggainmassor.php'>Logga in massör</a></li>";
@@ -38,8 +38,7 @@
             if ($_SESSION["loginstatus"] == TRUE)
             {
                 echo "<li><a href='visaminarecensioner.php'>Mina recensioner</a></li>
-                <li><a href='logga_ut.php'>Logga ut</a></li>
-                <li><a href='recensioner.php'>Recensioner</a></li>";
+                <li><a href='logga_ut.php'>Logga ut</a></li>";
             } 
         }
         

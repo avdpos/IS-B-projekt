@@ -18,7 +18,7 @@
     $bestallareId   =   $_SESSION['bestallareId'];
 
     $sql        =   "SELECT Namn, KlinikNamn, massor.MassorId FROM massagetid, massor 
-                        WHERE BestallarId =  $bestallareId AND massagetid.MassorId = massor.MassorId ";
+                        WHERE BestallarId =  $bestallareId AND massagetid.MassorId = massor.MassorId";
     $result     =   $conn->query($sql);
       
 ?>

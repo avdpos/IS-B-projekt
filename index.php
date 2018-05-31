@@ -36,7 +36,7 @@
                         <th><label for="Time">Tid</label></th>
                         <td>
                             <p>
-                                <select id="timepicker" name="tiempicker">
+                                <select id="timepicker" name="timepicker">
                                     <option value="070000">07:00</option>
                                     <option value="080000">08:00</option>
                                     <option value="090000">09:00</option>
