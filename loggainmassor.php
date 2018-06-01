@@ -27,7 +27,7 @@
                 placeholder="Write username here" require><br>
                 Password:<br>
                 <input type="password" name="Password" id="Password"
-                placehinputolder="Write password here" require><br>
+                placeholder="Write password here" require><br>
 
                 
                 <input id="knapp" type="submit" value="Logga in" name="submit" id="submitButton" class="button">

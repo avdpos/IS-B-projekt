@@ -26,9 +26,10 @@
                     <input type="text"      placeholder="Email"             name="Email"        required>
                     <input type="password"  placeholder="Lösenord"          name="Password"     required>
                     <input type="password"  placeholder="Bekräfta lösenord" name="regPassword2" required>
+                    <p class="message"><input type="checkbox"  required>Jag godkänner<a href="anvandarvillkor_bestallare.php"> användarvilkoren.</a></p>
                     <input id="knapp" type="submit" value="Skapa konto"     name="submit" id="submitButton" class="button">
                     <p class="message">Har du redan ett konto? <a href="loggainbestallare.php">Logga in här!</a></p>
-                    <!--  <input type="submit" class="button" name="Submit" value="Registrera användare">-->
+                    
               </form>
              </div>
            </div>

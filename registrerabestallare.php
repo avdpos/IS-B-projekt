@@ -24,6 +24,7 @@
                 <input type="password" placeholder="Epost">
                 <input type="password" placeholder="Lösenord">
                 <input type="password" placeholder="Bekräfta lösenord">
+                <p class="message"><input type="checkbox"  required>Jag godkänner<a href="anvandarvillkor_bestallare.php"> användarvilkoren.</a></p>
                  <button>Skapa konto</button>
                  <p class="message">Har du redan ett konto? <a href="loggainbestallare.php">Logga in här!</a></p>
                </form>

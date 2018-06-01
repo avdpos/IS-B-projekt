@@ -4,12 +4,13 @@
 	include 'include/moduls/dbConnection.php';
 	$datum		=	mysqli_real_escape_string($conn, $_POST['date']);
 	$tid		=	mysqli_real_escape_string($conn, $_POST['timepicker']);
+
 	// Exakt match av sökning
-	$query = "SELECT Datum, StartTid, KlinikNamn, TidId, massor.MassorId FROM massagetid, massor WHERE massagetid.MassorId=massor.MassorId AND BestallarId IS NULL AND '$datum' = massagetid.Datum AND $tid LIKE StartTid" ;
+	$query = "SELECT DISTINCT Datum, StartTid, KlinikNamn, TidId, massor.MassorId FROM massagetid, massor WHERE massagetid.MassorId=massor.MassorId AND BestallarId IS NULL AND '$datum' = massagetid.Datum AND '$tid' LIKE StartTid" ;
 	$result = $conn->query($query);
 
 	//Andra tider samma dag
-	$query2 = "SELECT Datum, StartTid, KlinikNamn, TidId, massor.MassorId FROM massagetid, massor WHERE massagetid.MassorId=massor.MassorId AND BestallarId IS NULL AND '$datum' = massagetid.Datum AND $tid NOT LIKE StartTid ORDER BY StartTid";
+	$query2 = "SELECT DISTINCT Datum, StartTid, KlinikNamn, TidId, massor.MassorId FROM massagetid, massor WHERE massagetid.MassorId=massor.MassorId AND BestallarId IS NULL AND '$datum' = massagetid.Datum AND '$tid' NOT LIKE StartTid ORDER BY StartTid";
 	$result2 = $conn->query($query2);
 ?>
 
@@ -30,6 +31,10 @@
 
 		<h1><b>Tillgängliga tider:</b><h1>
 		<?php
+			//sql för att visaa certifikat
+			$massor = NULL;
+			$sql	=	"SELECT SvenskMassage FROM certifikat WHERE certifikat.CertifikatsId = massor.CertifikatId AND MassorId LIKE $massor";
+
 			if(empty($row  = $result->fetch_assoc()))
 			{
 				echo	"<div class=\"bokningsbartid\">
@@ -46,10 +51,33 @@
 				//whileloop som pushar ut resultatet
 				while($row = $result->fetch_assoc())
 				{
-					echo "<div class=\"bokningsbartid\">", $row["KlinikNamn"], "<br> ", $row["Datum"], " ", $row["StartTid"];
+					$tid		=	$row["TidId"];
+					$massor		=	$row["MassorId"];
+					$sql	=	"SELECT SvenskMassage FROM certifikat, massor WHERE certifikat.CertifikatsId = massor.CertifikatId AND massor.MassorId LIKE $massor";
 					
-					$tid	=	$row["TidId"];
-					$massor	=	$row["MassorId"];
+
+					echo "<div class=\"bokningsbartid\">", $row["KlinikNamn"], "<br> ", $row["Datum"], " ", $row["StartTid"], "<br>";
+					
+					//certifieringsfunktion
+					$result3	=	$conn->query($sql);
+					$res3		=	$result3->fetch_assoc();
+					
+					if (!empty($res3))
+					{
+						if ($res3["SvenskMassage"] = 1)
+						{
+							echo	"Certifierad av Svensk massage";
+						}
+						else{
+							echo	"inga certifikat";
+						}
+					}
+					else
+					{
+						echo	"inga certifikat";
+					}
+
+					
 
 					echo	"<form method='post' action='include/moduls/bokning_inloggningskontroll.php'>							
 								<input type='hidden' value='$tid' name='tid'>
@@ -68,7 +96,7 @@
 
 		<h1><b>Andra tillgängliga tider samma dag:</b><h1>
 		<?php
-
+			
 			if(empty($row  = $result2->fetch_assoc()))
 			{
 				echo	"<div class=\"bokningsbartid\">
@@ -82,11 +110,31 @@
 				$result2 = $conn->query($query2);			
 				while($row = $result2->fetch_assoc())
 				{
-					echo "<div class=\"bokningsbartid\">", $row["KlinikNamn"], "<br> ", $row["Datum"], " ", $row["StartTid"];
+					echo "<div class=\"bokningsbartid\">", $row["KlinikNamn"], "<br> ", $row["Datum"], " ", $row["StartTid"], "<br>";
 					
 					$tid	=	$row["TidId"];
 					$massor	=	$row["MassorId"];
-	
+					$sql	=	"SELECT SvenskMassage FROM certifikat, massor WHERE certifikat.CertifikatsId = massor.CertifikatId AND massor.MassorId LIKE $massor";
+					
+					//certifieringsfunktion
+					$result3	=	$conn->query($sql);
+					$res3		=	$result3->fetch_assoc();
+
+					if (!empty($res3))
+					{
+						if ($res3["SvenskMassage"] = 1)
+						{
+							echo	"Certifierad av Svensk massage";
+						}
+						else{
+							echo	"inga certifikat";
+						}
+					}
+					else
+					{
+						echo	"inga certifikat";
+					}
+
 					echo	"<form method='post' action='include/moduls/bokning_inloggningskontroll.php'>							
 								<input type='hidden' value='$tid' name='tid'>
 								<button type='submit'>Boka tid</button> 

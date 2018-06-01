@@ -17,7 +17,6 @@ $dbPassword = $Pass["Password"];
 $dbEmail    = $Pass["Email"];
 $massorId   = $Pass["MassorId"];
 
-echo $Pass['Password'];
 
 //jämför lösenorden så att de är samma
 if ($dbPassword == $password)
@@ -32,6 +31,15 @@ if ($dbPassword == $password)
     $_SESSION["loginstatus"]    =   TRUE;
     $_SESSION["massor"]         =   TRUE;
     $_SESSION["massorId"]       =   $massorId;
+
+    //kontrollera adminstatus
+    $sql    =   "SELECT MassorId FROM administratorer WHERE MassorId = $massorId";
+    $result =   $conn->query($sql);
+    $row    =   $result->fetch_assoc();
+    if(!empty($row['MassorId']))
+        {
+            $_SESSION["admin"]  =   TRUE;
+        }
 
     header("Location: index.php");
 }

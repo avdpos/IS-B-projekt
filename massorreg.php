@@ -17,22 +17,22 @@
         </div type="regForm">
         
         <h1>Registrera ny massör</h1>
-                <form method="post" >
+                
         <div class="login-page">
                <div class="form">
-                <form method="post" class="login-form" onsubmit="return validateRegistration()" action="validateMassorReg.php">
-                    <input type="text" placeholder="Namn" name="Namn" id="Namn" required>
-                    <input type="text" placeholder="Klinik" name="klinik" id="klinik" required>
-                    <input type="text" placeholder="Email" name="email" id="email" required>
-                    <input type="password" placeholder="Lösenord" name="regPassword2" id="regpassword1" required>
-                    <input type="password" placeholder="Bekräfta lösenord" name="regPassword2" id="regpassword1" required>
-                    <input id="knapp" type="submit" value="Skapa konto" name="submit" id="submitButton" class="button">
-
-                    <p class="message">Har du redan ett konto? <a href="loggainmassor.php">Logga in här!</a></p>
-                    <!--  <input type="submit" class="button" name="Submit" value="Registrera användare">-->
-              </form>
-             </div>
-           </div>
-    <script src="assets/js/bestallarRegistration.js"></script>
+                <form method="post" action="validateMassorReg.php">
+                    <input type="text"      placeholder="Namn"              name="Namn"         id="Namn" required>
+                    <input type="text"      placeholder="Klinik"            name="Klinik"       id="klinik" required>
+                    <input type="text"      placeholder="Email"             name="Email"        id="email" required>
+                    <input type="password"  placeholder="Lösenord"          name="regPassword"  id="regpassword" required>
+                    <input type="password"  placeholder="Bekräfta lösenord" name="regPassword2" id="regpassword1" required>
+                    <!--<input id="knapp" type="submit" value="Skapa konto" name="submit" class="button">-->
+                    <p class="message"><input type="checkbox"  required>Jag godkänner<a href="anvandarvillkor_massor.php"> användarvilkoren.</a></p>
+                    <input type="submit" class="button" name="Submit" value="Registrera användare">
+                </form>
+                <p class="message">Har du redan ett konto? <a href="loggainmassor.php">Logga in här!</a></p>
+            </div>
+        </div>
+    
 </body>
 </html>

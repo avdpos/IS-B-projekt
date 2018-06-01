@@ -19,6 +19,7 @@
             <?php if (!empty($_SESSION["message"])){
                 echo $_SESSION["message"];
             }
+            
             ?>
         
             <form method="post" action="include/moduls/insert_massagetid.php">

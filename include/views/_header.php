@@ -32,6 +32,13 @@
                 echo "<li><a href='oskrivna_recensioner.php'>Skriv recensioner</a></li>";
             }
         }
+        if (!empty($_SESSION["admin"])) 
+        {
+            if ($_SESSION["admin"] == TRUE)
+            {
+                echo "<li><a href='adminpanel'>Adminpanel</a></li>";
+            }
+        }
 
         if (!empty($_SESSION["loginstatus"])) 
         {

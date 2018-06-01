@@ -21,6 +21,7 @@
         <br>
         <br>
         <br>
+        
             <form method="post" action="visaBokningsbaraTider.php">
                 <table class="form">
                     <tr>
@@ -37,20 +38,20 @@
                         <td>
                             <p>
                                 <select id="timepicker" name="timepicker">
-                                    <option value="070000">07:00</option>
-                                    <option value="080000">08:00</option>
-                                    <option value="090000">09:00</option>
-                                    <option value="100000">10:00</option>
-                                    <option value="110000">11:00</option>
-                                    <option value="120000">12:00</option>
-                                    <option value="130000">13:00</option>
-                                    <option value="140000">14:00</option>
-                                    <option value="150000">15:00</option>
-                                    <option value="160000">16:00</option>
-                                    <option value="170000">17:00</option>
-                                    <option value="180000">18:00</option>
-                                    <option value="190000">19:00</option>
-                                    <option value="200000">20:00</option>
+                                    <option value="07:00:00">07:00</option>
+                                    <option value="08:00:00">08:00</option>
+                                    <option value="09:00:00">09:00</option>
+                                    <option value="10:00:00">10:00</option>
+                                    <option value="11:00:00">11:00</option>
+                                    <option value="12:00:00">12:00</option>
+                                    <option value="13:00:00">13:00</option>
+                                    <option value="14:00:00">14:00</option>
+                                    <option value="15:00:00">15:00</option>
+                                    <option value="16:00:00">16:00</option>
+                                    <option value="17:00:00">17:00</option>
+                                    <option value="18:00:00">18:00</option>
+                                    <option value="19:00:00">19:00</option>
+                                    <option value="20:00:00">20:00</option>
                                 </select>
                             </p>
                         </td>

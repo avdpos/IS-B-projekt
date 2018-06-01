@@ -9,12 +9,14 @@ $bestallareId    =   $_SESSION["bestallareId"];
 echo "tid id: " . $tidid . "<br>";
 echo "beställarId " . $bestallareId;
 
-$sql    =   "UPDATE massagetid SET BestallarId = $bestallareId WHERE TidId = $tidid"; 
+$sql    =   "UPDATE massagetid SET BestallarId = $bestallareId WHERE TidId = $tidid";
 
+$bek    =   "INSERT INTO bokningsbekraftelse(MassageTidId) VALUES $tidid ";
 if ($conn->query($sql) === TRUE) {
     $_SESSION["message"]    =   "Bokning genomförd";
 
-    
+    $conn->query($bek);
+
     mysqli_close($conn);
     header("Location: ../../bokningsbekraftelse.php");
 } else {

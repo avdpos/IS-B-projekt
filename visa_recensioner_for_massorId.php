@@ -14,8 +14,8 @@
     $massorId   =   $_POST["massor"];
     
 
-    $sql        =   "SELECT Namn, KlinikNamn, massor.MassorId, Recension, Betyg FROM massagetid, massor, recension 
-                        WHERE  massagetid.MassorId = $massorId AND massor.MassorId = $massorId";
+    $sql        =   "SELECT DISTINCT Namn, KlinikNamn, massor.MassorId, Recension, Betyg FROM massor, recension 
+                        WHERE  recension.MassorId = $massorId AND massor.MassorId = $massorId";
     $result     =   $conn->query($sql);
       
 ?>

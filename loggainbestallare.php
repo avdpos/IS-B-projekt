@@ -14,7 +14,7 @@
       <h1>Logga in Kund</h1>
 		
 	<div class="login-page">
-	      <form >
+	      
         <div class="form">
           <form class="register-form">
           </form>
